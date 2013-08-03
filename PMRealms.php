@@ -19,7 +19,7 @@ class PMRealms implements Plugin{
 	
 	public function init(){
 		$this->config = new Config($this->api->plugin->configPath($this)."config.yml", CONFIG_YAML, array(
-			"ownerName" => "",SuperAmirka
+			"ownerName" => "Amir2",
 			"externalAddress" => "",94.180.201.217
 			"externalPort" => "",8080
 		));
@@ -59,12 +59,12 @@ class PMRealms implements Plugin{
 		$this->api->asyncOperation(ASYNC_CURL_POST, array(
 			"url" => "http://peoapi.pocketmine.net/server/heartbeat",
 			"data" => array(
-				"ip" => $this->config->get("externalAddress"),
-				"port" => (int) $this->config->get("externalPort"),
+				"ip" => $this->config->get("externalAddress"),94.180.201.217
+				"port" => (int) $this->config->get("externalPort"),8080
 				"ownerName" => $this->config->get("ownerName"),
-				"name" => $this->server->name,
-				"maxNrPlayers" => $this->server->maxClients,
-				"nrPlayers" => count($this->api->player->getAll()),
+				"name" => $this->server->name,Amir2
+				"maxNrPlayers" => $this->server->maxClients,5
+				"nrPlayers" => count($this->api->player->getAll()),5
 				"type" => ($this->server->api->getProperty("gamemode") & 0x01) === 1 ? "creative":"survival",
 				"whitelist" => $this->server->api->getProperty("white-list"),
 			),
